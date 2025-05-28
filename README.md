@@ -24,6 +24,16 @@ templates/book — vues Twig
 public/ — point d’entrée de l’application
 config/ — configuration Symfony
 
+🛠️ Choix techniques
+Symfony 7 : Framework
+Doctrine ORM : mapping objet-relationnel, gestion de la base de données
+Twig : moteur de templates
+MySQL : base de données relationnelle.
+Bootstrap 5 (via CDN) 
+Architecture MVC : Compatible avec Symfony
+Formulaires Symfony : validation et protection CSRF intégrée. 
+
+
 🧪 Fonctionnalités
 CRUD complet sur les livres
 Architecture MVC Symfony
