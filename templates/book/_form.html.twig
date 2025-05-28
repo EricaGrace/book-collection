@@ -1,4 +1,26 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="mb-3">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.title) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.author) }}
+        {{ form_widget(form.author, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.author) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.date_of_publication) }}
+        {{ form_widget(form.date_of_publication, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form.date_of_publication) }}
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+        <button class="btn btn-success">
+            {{ button_label|default('Enregistrer') }}
+        </button>
+    </div>
 {{ form_end(form) }}
+
