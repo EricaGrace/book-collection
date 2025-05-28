@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}index{% endblock %}
+
+{% block body %}
+    <h1>Liste de livres disponibles</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titres</th>
+                <th>Auteurs</th>
+                <th>Date de publication</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.dateOfPublication ? book.dateOfPublication|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_book_show', {'id': book.id}) }}">voir</a>
+                    <a href="{{ path('app_book_edit', {'id': book.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_book_new') }}">Ajouter un livre </a>
+{% endblock %}
